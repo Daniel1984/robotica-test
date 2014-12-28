@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  img.loading(src='/img/loading.gif')
+  div.game-controls
+    div
+      h3 X:
+      select.x-pos
+        option(val=0)=0
+        option(val=1)=1
+        option(val=2)=2
+        option(val=3)=3
+        option(val=4)=4
+      h3 Y:
+      select.y-pos
+        option(val=0)=0
+        option(val=1)=1
+        option(val=2)=2
+        option(val=3)=3
+        option(val=4)=4
+      h3 F:
+      select.facing
+        option(val='east') east
+        option(val='south') south
+        option(val='west') west
+        option(val='north') north
+    div
+      button.place-btn Place
+      button.move-btn Move
+      button.left-btn Left
+      button.right-btn Right
+      button.report-btn Report
+

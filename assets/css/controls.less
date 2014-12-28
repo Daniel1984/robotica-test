@@ -1,0 +1,56 @@
+div.game-controls {
+	visibility: hidden;
+	position: absolute;
+	overflow-y: auto;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 80px;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	text-align: center;
+	.flex-box-mixin();
+	div { width: 100%; }
+	h3 {
+		font-size: 12px;
+		margin-bottom: 0px;
+		text-align: left;
+		margin-left: 5%;
+	}
+	select {
+		background-color: #0199d9;
+		border: none;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		width: 94%;
+		height: 36px;
+		padding-left: 3px;
+		text-align: center;
+		font-weight: bold;
+		color: white;
+  	-webkit-appearance: none;
+  	appearance: none;
+  	outline: none;
+	}
+	button {
+		margin-top: 12px;
+		width: 94%;
+		height: 36px;
+	  cursor: pointer;
+	  border: none;
+	  -webkit-border-radius: 10px;
+	  border-radius: 10px;
+	  color: rgba(255,255,255,0.9);
+	  background: #0199d9;
+		font-size: 13px;
+		font-weight: bold;
+		padding: 0px;
+		text-align: center;
+		&:hover, &:active {
+			outline: none;
+			outline-color: transparent;
+			outline-style: none;
+			border: none;
+		}
+	}
+}
