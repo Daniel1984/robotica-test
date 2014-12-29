@@ -42,12 +42,12 @@ describe('ROBOT POSITION TEST', function(){
 			assert.equal(0, robot.sy);
 		});
 		it('if current facing is NORTH and MOVING == false, will result in facing WEST', function() {
-      robot.sy = robot.NORTH_FRAME;
+      			robot.sy = robot.NORTH_FRAME;
 			robot.turnLeft();
 			assert.equal(robot.WEST_FRAME, robot.sy);
 		});
 		it('if current facing is WEST and MOVING == false, will result in facing SOUTH', function() {
-      robot.sy = robot.WEST_FRAME;
+      			robot.sy = robot.WEST_FRAME;
 			robot.turnLeft();
 			assert.equal(robot.SOUTH_FRAME, robot.sy);
 		});
@@ -64,12 +64,12 @@ describe('ROBOT POSITION TEST', function(){
 			assert.equal(0, robot.sy);
 		});
 		it('if current facing is NORTH and MOVING == false, will result in robot facing EAST', function() {
-      robot.sy = robot.NORTH_FRAME;
+      			robot.sy = robot.NORTH_FRAME;
 			robot.turnRight();
 			assert.equal(robot.EAST_FRAME, robot.sy);
 		});
 		it('if current facing is EAST and MOVING == false, will result in robot facing SOUTH', function() {
-      robot.sy = robot.EAST_FRAME;
+      			robot.sy = robot.EAST_FRAME;
 			robot.turnRight();
 			assert.equal(robot.SOUTH_FRAME, robot.sy);
 		});
