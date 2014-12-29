@@ -36,14 +36,20 @@ describe('ROBOT POSITION TEST', function(){
 			robot.sy = 0;
 			robot.MOVING = false;
 		});
-		it('should change source Y to 64 if MOVING == false', function() {
-			robot.turnLeft();
-			assert.equal(64, robot.sy);
-		});
 		it('source Y should stay 0 if MOVING == true', function() {
 			robot.MOVING = true;
 			robot.turnLeft();
 			assert.equal(0, robot.sy);
+		});
+		it('if current facing is NORTH and MOVING == false, will result in facing WEST', function() {
+      robot.sy = robot.NORTH_FRAME;
+			robot.turnLeft();
+			assert.equal(robot.WEST_FRAME, robot.sy);
+		});
+		it('if current facing is WEST and MOVING == false, will result in facing SOUTH', function() {
+      robot.sy = robot.WEST_FRAME;
+			robot.turnLeft();
+			assert.equal(robot.SOUTH_FRAME, robot.sy);
 		});
 	});
 
@@ -52,14 +58,20 @@ describe('ROBOT POSITION TEST', function(){
 			robot.sy = 0;
 			robot.MOVING = false;
 		});
-		it('should change source Y to 64 if MOVING == false', function() {
-			robot.turnRight();
-			assert.equal(128, robot.sy);
-		});
 		it('source Y should stay 0 if MOVING == true', function() {
 			robot.MOVING = true;
 			robot.turnRight();
 			assert.equal(0, robot.sy);
+		});
+		it('if current facing is NORTH and MOVING == false, will result in robot facing EAST', function() {
+      robot.sy = robot.NORTH_FRAME;
+			robot.turnRight();
+			assert.equal(robot.EAST_FRAME, robot.sy);
+		});
+		it('if current facing is EAST and MOVING == false, will result in robot facing SOUTH', function() {
+      robot.sy = robot.EAST_FRAME;
+			robot.turnRight();
+			assert.equal(robot.SOUTH_FRAME, robot.sy);
 		});
 	});
 	
