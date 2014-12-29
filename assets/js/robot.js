@@ -9,12 +9,12 @@ function Robot() {
 	var SOURCE_HEIGHT = 64;
 	var DESTINATION_WIDTH = 120;
 	var DESTINATION_HEIGHT = 120;
-	var ROBOT_ID = 1;
-	var MOVING = false;
+	var ROBOT_ID = 1;	
 
 	var ROBOT_ROW = null;
 	var ROBOT_COLUMN = null;
-
+	
+	this.MOVING = false;
 	this.SOUTH_FRAME = SOURCE_HEIGHT * 0;
 	this.WEST_FRAME = SOURCE_WIDTH * 1;	
 	this.EAST_FRAME = SOURCE_WIDTH * 2;
@@ -75,19 +75,19 @@ function Robot() {
 	};
 
 	this.turnLeft = function() {
-		if(MOVING) return;
+		if(this.MOVING) return;
 		this.sy = this.WEST_FRAME;
 	};
 
 	this.turnRight = function() {
-		if(MOVING) return;
+		if(this.MOVING) return;
 		this.sy = this.EAST_FRAME;
 	};
 
 	this.move = function(direction) {
 		direction = direction || direction_mapper[this.sy];
-		if(MOVING || this.onEdge(direction) || this.alpha === 0) return;
-		MOVING = true;
+		if(this.MOVING || this.onEdge(direction) || this.alpha === 0) return;
+		this.MOVING = true;
 		this.moveInDirection(direction);
 		this.sy = this[direction.toUpperCase() + '_FRAME'];	
 	};
@@ -102,7 +102,7 @@ function Robot() {
 	};
 
 	this.update = function() {
-		if(!MOVING) return;
+		if(!this.MOVING) return;
 		this.animateFrames(); // method inherited from Sprite
 		this.animateMovement();
 	};
@@ -110,16 +110,16 @@ function Robot() {
 	this.animateMovement = function() {
 		if(this.sy == this.EAST_FRAME) {
 			this.dx += 2;
-			if(this.dx % DESTINATION_WIDTH === 0) MOVING = false;
+			if(this.dx % DESTINATION_WIDTH === 0) this.MOVING = false;
 		} else if(this.sy == this.SOUTH_FRAME) {
 			this.dy += 2;
-			if(this.dy % DESTINATION_HEIGHT === 0) MOVING = false;
+			if(this.dy % DESTINATION_HEIGHT === 0) this.MOVING = false;
 		} else if(this.sy == this.WEST_FRAME) {
 			this.dx -= 2;
-			if(this.dx % DESTINATION_WIDTH === 0) MOVING = false;
+			if(this.dx % DESTINATION_WIDTH === 0) this.MOVING = false;
 		} else if(this.sy == this.NORTH_FRAME) {
 			this.dy -= 2;
-			if(this.dy % DESTINATION_HEIGHT === 0) MOVING = false;
+			if(this.dy % DESTINATION_HEIGHT === 0) this.MOVING = false;
 		}
 	};
 
