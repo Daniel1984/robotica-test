@@ -15,10 +15,10 @@ describe('ROBOT POSITION TEST', function(){
 	});
 
 	describe('updateCoordinates()', function() {
-  	it('it should set robots alpha to 1', function() {
+  		it('it should set robots alpha to 1', function() {
 			robot.updateCoordinates('south', 1, 1);
-    	assert.equal(1, robot.alpha);
-  	});
+    			assert.equal(1, robot.alpha);
+  		});
 
 		it('should update robots location on the map', function() {
 			robot.updateCoordinates('south', 2, 2);
