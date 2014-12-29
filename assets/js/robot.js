@@ -75,39 +75,39 @@ function Robot() {
 	};
 
 	this.turnLeft = function() {
-      if(this.MOVING) return;
-      switch(this.sy) {
-        case this.EAST_FRAME:
-          this.sy = this.NORTH_FRAME;
-          break;
-        case this.NORTH_FRAME:
-          this.sy = this.WEST_FRAME;
-          break;
-        case this.WEST_FRAME:
-          this.sy = this.SOUTH_FRAME;
-          break;
-        case this.SOUTH_FRAME:
-          this.sy = this.EAST_FRAME;
-          break;
-      }
+      		if(this.MOVING) return;
+      		switch(this.sy) {
+        		case this.EAST_FRAME:
+          			this.sy = this.NORTH_FRAME;
+          			break;
+        		case this.NORTH_FRAME:
+          			this.sy = this.WEST_FRAME;
+          			break;
+        		case this.WEST_FRAME:
+          			this.sy = this.SOUTH_FRAME;
+          			break;
+        		case this.SOUTH_FRAME:
+          			this.sy = this.EAST_FRAME;
+		          	break;
+      		}
 	};
 
 	this.turnRight = function() {
-      if(this.MOVING) return;
-      switch(this.sy) {
-          case this.EAST_FRAME:
-              this.sy = this.SOUTH_FRAME;
-              break;
-          case this.SOUTH_FRAME:
-              this.sy = this.WEST_FRAME;
-              break;
-          case this.WEST_FRAME:
-              this.sy = this.NORTH_FRAME;
-              break;
-          case this.NORTH_FRAME:
-             this.sy = this.EAST_FRAME;
-              break;
-      }
+      		if(this.MOVING) return;
+      		switch(this.sy) {
+          		case this.EAST_FRAME:
+              			this.sy = this.SOUTH_FRAME;
+              			break;
+          		case this.SOUTH_FRAME:
+              			this.sy = this.WEST_FRAME;
+              			break;
+          		case this.WEST_FRAME:
+              			this.sy = this.NORTH_FRAME;
+              			break;
+          		case this.NORTH_FRAME:
+             			this.sy = this.EAST_FRAME;
+        			break;
+      		}
 	};
 
 	this.move = function(direction) {
